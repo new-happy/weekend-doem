@@ -1,0 +1,73 @@
+.list {
+  padding-top: 30px;
+  position: relative;
+}
+.list-title {
+  width: 440px;
+  line-height: 128px;
+  margin: 0 auto;
+  background-color: pink;
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+   color: #fff;
+   margin-bottom: 300px;
+}
+.list-each {
+  width: 360px;
+  display: flex;
+  justify-content:space-between;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+.list-down {
+  position: absolute;
+  left: 50%;
+  margin-left: -180px;
+  top:135px;
+  background-color: #fff;
+}
+.list-each>img{
+  width: 40px;
+  height: 40px;
+}
+.list-each div:nth-child(2){
+  width: 80px;
+  display: flex;
+  flex-direction: column;
+  flex:2;
+  margin-left: 30px;
+}
+.list-each div:nth-child(2) span:nth-child(1){
+  font-size: 20px;
+  color: #ff1493;
+}
+.list-each div button{
+  background-color: #fff;
+  outline: none;
+  border: 1px solid #fff;
+  display: block;
+  width: 30px;
+}
+.list-each div:nth-child(3){
+  flex: 1;
+  display: flex;
+  width: 90px;
+  height: 29px;
+  justify-content: space-between;
+  margin-top: 10px;
+  margin-right: 30px;
+}
+.list-each div:nth-child(3) span {
+  display: block;
+  text-align: center;
+  width: 30px;
+  line-height: 29px;
+  border-radius: 50%;
+  background-color: pink;
+}
+.list-each>button{
+  background-color: #fff;
+  border: 1px solid #fff;
+  outline: none;
+}

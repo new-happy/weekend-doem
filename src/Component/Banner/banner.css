@@ -1,0 +1,58 @@
+.banner {
+  padding: 50px 0 30px 0;
+}
+.show {
+  margin: 0 auto;
+  width: 800px;
+  overflow: hidden;
+  position: relative;
+}
+.pic{
+  width: 4000px;
+  height: 400px;
+  display: flex;
+  transition: all 1s;
+}
+.show>a{
+  position: absolute;
+  display: block;
+  width: 30px;
+  height: 50px;
+  background:rgba(0,0,0,0.4);
+}
+.show>a:nth-child(3){
+  top:135px;
+}
+.show>a:nth-child(4){
+  top:135px;
+  right: 0;
+}
+.show>a img{
+  width: 30px;
+  height: 50px;
+}
+.pic img{
+  width: 100%;
+}
+.pic-down {
+  width: 200px;
+  background-color: #ccc;
+  display: flex;
+  justify-content: space-around;
+  border-radius: 50px;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  margin-left: -100px;
+}
+.pic-down a{
+  display: block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #000;
+  margin: 5px 0;
+}
+.pic-down .active{
+  background-color: red;
+}
