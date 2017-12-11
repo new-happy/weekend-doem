@@ -34,68 +34,79 @@ class Banner extends Component {
       }
     ],
     show : 0,
-    active : 0
   }
-  constructor(){
-    super()
-    this.time = setInterval(() => {
-      if(this.state.show < 4){
-        this.setState({
-          show : this.state.show + 1,
-          active : this.state.show + 1
-        })
-      }else{
-        this.setState({
-          show : 0,
-          active :0
-        })
-      }
-  },1500)
-}
   handleClick = (i,e) => {
     e.preventDefault()
     this.setState({
-      show : i,
-      active : i
+      show : i
     })
   }
   handleRight = () => {
     if(this.state.show < 4){
       this.setState({
-        show : this.state.show + 1,
-        active : this.state.show + 1
+        show : this.state.show + 1
       })
     }else{
       this.setState({
-        show : 0,
-        active : 0
+        show : 0
       })
     }
   }
   handleLeft = () => {
     if(this.state.show > 0){
       this.setState({
-        show : this.state.show - 1,
-        active : this.state.show - 1
+        show : this.state.show - 1
       })
     }else{
       this.setState({
-        show : 4,
-        active :4
+        show : 4
       })
     }
+  }
+  componentDidMount(){
+    this.time = setInterval(() => {
+      if(this.state.show < 4){
+        this.setState({
+          show : this.state.show + 1
+        })
+      }else{
+        this.setState({
+          show : 0
+        })
+      }
+  },2000)
+}
+  loop = () => {
+    return setInterval(() => {
+      if(this.state.show < 4){
+        this.setState({
+          show : this.state.show + 1
+        })
+      }else{
+        this.setState({
+          show : 0
+        })
+      }
+  },2000)
+}
+  handleEnter = () => {
+    clearInterval(this.time)
+  }
+  handleLeave = () => {
+    this.time = this.loop()
   }
   render () {
     let pic = this.state.pics.map( (item) => {
       return <img src={ item.pic } alt={ item.id } key={ item.id }/>
     })
     let picDown = this.state.pics.map( (item,i) => {
-      return <a href="#" key={ item.id } onClick={ (e) => this.handleClick(i,e) } className={ `${this.state.active === i ? 'active' : ''}`}></a>
+      return <a href="#" key={ item.id } onClick={ (e) => this.handleClick(i,e) }
+        className={ `${this.state.show === i && 'active'}`}></a>
     })
-    let left = this.state.show * -800
+  0
    return (
      <div className="banner">
-       <div className="show">
+       <div className="show"onMouseEnter={ this.handleEnter } onMouseLeave={ this.handleLeave }>
         <div className="pic" style={ { marginLeft : left } }>
           { pic }
         </div>

@@ -3,7 +3,6 @@ import './list.css'
 
 class List extends Component {
   render () {
-    console.log(this.props)
     let { goods, click,buy} = this.props
     let total = 0
     let payment = goods.newArr.map((item,i) => {
