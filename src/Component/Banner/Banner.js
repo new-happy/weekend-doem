@@ -103,7 +103,7 @@ class Banner extends Component {
       return <a href="#" key={ item.id } onClick={ (e) => this.handleClick(i,e) }
         className={ `${this.state.show === i && 'active'}`}></a>
     })
-  0
+    let left = this.state.show * -800
    return (
      <div className="banner">
        <div className="show"onMouseEnter={ this.handleEnter } onMouseLeave={ this.handleLeave }>
