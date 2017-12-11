@@ -32,3 +32,8 @@ class List extends Component {
 }
 
 export default List
+//数组的 reduce 方法
+// let totil = [1,2,3,4,5].reduce( (sum item ) =>{
+//   return sum + item
+// }，0)
+// 返回 1+2+3+4+5

@@ -35,12 +35,18 @@ class App extends Component {
           id:3
         }
       ],
-      newArr : []
+      newArr : [],
+      total : 0
     }
-    handleBuy = (i,item) => {
-      let { goods ,newArr} = this.state
-      goods[i-1].show = !goods[i-1].show
-      goods[i-1].num = 1
+    handleBuy = (id,item) => {
+      let { goods, newArr} = this.state
+      goods.map(item => {
+        if(item.id === id){
+          item.show = !item.show
+          item.num = 1
+        }
+        return item
+      })
       let ind = newArr.indexOf(item)
       if(ind ===-1){
         newArr.push(item)
@@ -51,11 +57,16 @@ class App extends Component {
         goods : goods
       })
     }
-    handleClick = (num,i) => {
+    handleClick = (num,id) => {
       let { goods } = this.state
-       if(!(goods[i-1].num === 1 && num === -1)){
-         goods[i-1].num = goods[i-1].num + num
-       }
+         goods.map( item => {
+           if(item.id === id){
+             if(!(item.num === 1 && num === -1)){
+               item.num = item.num + num
+             }
+           }
+           return item
+         })
       this.setState({
         goods : goods
       })
