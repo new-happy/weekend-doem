@@ -22,7 +22,7 @@ class List extends Component {
    return (
      <div className="list">
           <div className="list-title">
-              { `${total} 元` }
+              { total !==0 ? `${total} 元` : '请添加物品到购物车' }
           </div>
           <div className="list-down">
             { payment}
